@@ -40,9 +40,9 @@ class PongGame(Widget):
     player2 = ObjectProperty(None)  # Игрок 2
 
     # начальный угол
-    def serve_ball(self, vel=(4, 0)):
+    def serve_ball(self, vel=(3, 2)):
         self.ball.center = self.center
-        self.ball.velocity = Vector(vel[0], vel[1]).rotate(randint(45, 360))
+        self.ball.velocity = Vector(vel[0], vel[1]).rotate(randint(100, 360))
 
     def update(self, dt):
         self.ball.move()  # двигаем шарик в каждом обновлении экрана
