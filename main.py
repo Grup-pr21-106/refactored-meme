@@ -42,7 +42,7 @@ class PongGame(Widget):
     # начальный угол
     def serve_ball(self, vel=(3, 2)):
         self.ball.center = self.center
-        self.ball.velocity = Vector(vel[0], vel[1]).rotate(randint(100, 360))
+        self.ball.velocity = Vector(vel[0], vel[1]).rotate(randint(0, 360))
 
     def update(self, dt):
         self.ball.move()  # двигаем шарик в каждом обновлении экрана
@@ -58,11 +58,11 @@ class PongGame(Widget):
         # отскок шарика по оси X
         if self.ball.x < self.x:
             self.player2.score += 1
-            self.serve_ball(vel=(4, 0))
+            self.serve_ball(vel=(4, 1))
 
         if self.ball.x > self.width:
             self.player1.score += 1
-            self.serve_ball(vel=(-4, 0))
+            self.serve_ball(vel=(-4, 1))
 
     # Событие прикосновения к экрану
     def on_touch_move(self, touch):
