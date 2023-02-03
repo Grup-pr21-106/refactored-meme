@@ -1,5 +1,5 @@
-from kivy.app import App
-from kivy.uix.widget import Widget
+from kivymd.app import MDApp
+from kivymd.uix.widget import Widget
 from kivy.properties import (
     NumericProperty, ReferenceListProperty, ObjectProperty
 )
@@ -74,7 +74,7 @@ class PongGame(Widget):
             self.player2.center_y = touch.y
 
 
-class PongApp(App):
+class PongApp(MDApp):
     def build(self):
         game = PongGame()
         game.serve_ball()
