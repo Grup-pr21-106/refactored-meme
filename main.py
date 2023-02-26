@@ -63,6 +63,12 @@ class PongGame(Widget):
         if self.ball.x > self.width:
             self.player1.score += 1
             self.serve_ball(vel=(-4, 1))
+            
+    def on_size(self, *args):
+        if self.width > self.height:
+            self.orientation = 'horizontal'
+        else:
+            self.orientation = 'horizontal'
 
     # Событие прикосновения к экрану
     def on_touch_move(self, touch):
